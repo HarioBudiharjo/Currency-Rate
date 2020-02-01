@@ -6,6 +6,11 @@ target 'Currency Rate' do
   use_frameworks!
 
   # Pods for Currency Rate
+  pod 'Alamofire', '~> 5.0.0-rc.3'
+  pod 'RxSwift', '~> 5'
+  pod 'RxCocoa', '~> 5'
+  pod 'MBProgressHUD', '~> 1.2.0'
+  pod 'Toast-Swift', '~> 5.0.1'
 
   target 'Currency RateTests' do
     inherit! :search_paths
