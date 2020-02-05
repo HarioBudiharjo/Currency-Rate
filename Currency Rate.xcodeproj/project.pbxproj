@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,10 @@
 		54691FF823E5C7B900650631 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54691FF623E5C7B900650631 /* LaunchScreen.storyboard */; };
 		5469200323E5C7B900650631 /* Currency_RateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5469200223E5C7B900650631 /* Currency_RateTests.swift */; };
 		5469200E23E5C7B900650631 /* Currency_RateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5469200D23E5C7B900650631 /* Currency_RateUITests.swift */; };
+		548D3A5323E81C1B00EF252C /* Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548D3A5223E81C1B00EF252C /* Formatting.swift */; };
+		54B5788023E6126600A304B0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B5787F23E6126600A304B0 /* HomeViewModel.swift */; };
+		54B5788323E6151A00A304B0 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B5788223E6151A00A304B0 /* Resources.swift */; };
+		54E39F7B23E72D130049A43A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E39F7A23E72D130049A43A /* HomeViewController.swift */; };
 		5FD1710C6C5AC9A13D790F3A /* Pods_Currency_RateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9544DCFEA51C37974370E28 /* Pods_Currency_RateTests.framework */; };
 		6651C2D0E145D9CB45B8BAE6 /* Pods_Currency_Rate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4909BF1023E9A62E2B9DDA55 /* Pods_Currency_Rate.framework */; };
 		ACCDA23D68D05EA70FB6D6C2 /* Pods_Currency_Rate_Currency_RateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6947C8BD1E2DB9607C1B05C4 /* Pods_Currency_Rate_Currency_RateUITests.framework */; };
@@ -57,6 +61,10 @@
 		5469200923E5C7B900650631 /* Currency RateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Currency RateUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5469200D23E5C7B900650631 /* Currency_RateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency_RateUITests.swift; sourceTree = "<group>"; };
 		5469200F23E5C7B900650631 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		548D3A5223E81C1B00EF252C /* Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatting.swift; sourceTree = "<group>"; };
+		54B5787F23E6126600A304B0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		54B5788223E6151A00A304B0 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		54E39F7A23E72D130049A43A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6947C8BD1E2DB9607C1B05C4 /* Pods_Currency_Rate_Currency_RateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Currency_Rate_Currency_RateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88062645CA30229629C05862 /* Pods-Currency Rate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Currency Rate.debug.xcconfig"; path = "Target Support Files/Pods-Currency Rate/Pods-Currency Rate.debug.xcconfig"; sourceTree = "<group>"; };
 		D7809A13914EBF81E3D86F4F /* Pods-Currency Rate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Currency Rate.release.xcconfig"; path = "Target Support Files/Pods-Currency Rate/Pods-Currency Rate.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,13 +134,17 @@
 		54691FE923E5C7B700650631 /* Currency Rate */ = {
 			isa = PBXGroup;
 			children = (
+				548D3A5123E81C0800EF252C /* Helpers */,
+				54B5788123E614D500A304B0 /* View */,
+				54B5787E23E60B8B00A304B0 /* Controller */,
+				54B5787C23E60B7500A304B0 /* View Model */,
 				54691FEA23E5C7B700650631 /* AppDelegate.swift */,
 				54691FEC23E5C7B700650631 /* ViewController.swift */,
-				54691FEE23E5C7B700650631 /* Main.storyboard */,
 				54691FF423E5C7B900650631 /* Assets.xcassets */,
 				54691FF623E5C7B900650631 /* LaunchScreen.storyboard */,
 				54691FF923E5C7B900650631 /* Info.plist */,
 				54691FF123E5C7B700650631 /* Currency_Rate.xcdatamodeld */,
+				54B5788223E6151A00A304B0 /* Resources.swift */,
 			);
 			path = "Currency Rate";
 			sourceTree = "<group>";
@@ -155,6 +167,38 @@
 			path = "Currency RateUITests";
 			sourceTree = "<group>";
 		};
+		548D3A5123E81C0800EF252C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				548D3A5223E81C1B00EF252C /* Formatting.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		54B5787C23E60B7500A304B0 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				54B5787F23E6126600A304B0 /* HomeViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		54B5787E23E60B8B00A304B0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				54E39F7A23E72D130049A43A /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		54B5788123E614D500A304B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54691FEE23E5C7B700650631 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D9A346FDA4E9FFD26BFCC362 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,7 +209,6 @@
 				1F74E8561A7AF09CA14AFC55 /* Pods-Currency RateTests.debug.xcconfig */,
 				1DEC5BC129A07B1CD7D3FA8E /* Pods-Currency RateTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -410,7 +453,11 @@
 			files = (
 				54691FF323E5C7B700650631 /* Currency_Rate.xcdatamodeld in Sources */,
 				54691FED23E5C7B700650631 /* ViewController.swift in Sources */,
+				548D3A5323E81C1B00EF252C /* Formatting.swift in Sources */,
 				54691FEB23E5C7B700650631 /* AppDelegate.swift in Sources */,
+				54B5788323E6151A00A304B0 /* Resources.swift in Sources */,
+				54B5788023E6126600A304B0 /* HomeViewModel.swift in Sources */,
+				54E39F7B23E72D130049A43A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,17 +633,21 @@
 			baseConfigurationReference = 88062645CA30229629C05862 /* Pods-Currency Rate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A3ZG558H3C;
 				INFOPLIST_FILE = "Currency Rate/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "me.hario.Currency-Rate";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.hario.Currency-Rate2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -605,17 +656,21 @@
 			baseConfigurationReference = D7809A13914EBF81E3D86F4F /* Pods-Currency Rate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A3ZG558H3C;
 				INFOPLIST_FILE = "Currency Rate/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "me.hario.Currency-Rate";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.hario.Currency-Rate2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
