@@ -28,6 +28,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         bindRx()
         bindTapRx()
+        self.hideKeyboardWhenTappedAround()
     }
     
     private func bindRx(){
