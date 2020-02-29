@@ -8,33 +8,17 @@
 
 import Foundation
 
-class Formatting {
-    static func beatifyCurrency(currency:Double) -> String{
-        let currencyFormatter = NumberFormatter()
-        currencyFormatter.usesGroupingSeparator = true
-        currencyFormatter.numberStyle = .currency
-        // localize to your grouping and decimal separator
-//        currencyFormatter.locale = Locale.
-        
-        // We'll force unwrap with the !, if you've got defined data you may need more error checking
-        
-        let priceString = currencyFormatter.string(from: NSNumber(value: currency))!
-        return priceString
-    }
-}
-
 extension String {
     func beatifyCurrency() -> String{
-        let currency = Double(self)!
-        let currencyFormatter = NumberFormatter()
-        currencyFormatter.usesGroupingSeparator = true
-//        currencyFormatter.numberStyle = .currency
-        // localize to your grouping and decimal separator
-        //        currencyFormatter.locale = Locale.
-        
-        // We'll force unwrap with the !, if you've got defined data you may need more error checking
-        
-        let priceString = currencyFormatter.string(from: NSNumber(value: currency))!
-        return priceString
+        if let value = Double(self) {
+            let formatter = NumberFormatter()
+            formatter.currencySymbol = ""
+            formatter.numberStyle = .currency
+            formatter.maximumFractionDigits = 2
+            if let str = formatter.string(for: value) {
+                return str
+            }
+        }
+        return ""
     }
 }
