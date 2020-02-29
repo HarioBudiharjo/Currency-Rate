@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var totalExchangeTextField: UITextField!
     @IBOutlet weak var exchangeButton: UIButton!
     @IBOutlet weak var outputTextView: UITextView!
+    @IBOutlet weak var clearBarButton: UIBarButtonItem!
     
     let viewModel = HomeViewModel()
     let disposeBag = DisposeBag()
@@ -48,11 +49,12 @@ class HomeViewController: UIViewController {
             .bind(to: self.destinationRateLabel.rx.text)
             .disposed(by: disposeBag)
         
-//        viewModel.exchangeCurrency
-//            .asObservable()
-//            .map{$0}
-//            .bind(to: self.totalExchangeTextField.rx.text)
-//            .disposed(by: disposeBag)
+        viewModel.loading
+            .asObserver()
+            .subscribe(onNext : { (isLoading) in
+                self.showLoadingIndicator(isLoading: isLoading)
+            })
+            .disposed(by: disposeBag)
         
         self.totalExchangeTextField.rx.text.orEmpty.bind(to: viewModel.exchangeCurrency).disposed(by: disposeBag)
         
@@ -78,6 +80,9 @@ class HomeViewController: UIViewController {
             }.disposed(by: disposeBag)
         exchangeButton.rx.tap.bind{
             self.viewModel.getData()
+            }.disposed(by: disposeBag)
+        clearBarButton.rx.tap.bind{
+            self.viewModel.clear()
             }.disposed(by: disposeBag)
     }
     
@@ -128,4 +133,13 @@ class HomeViewController: UIViewController {
         
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    private func showLoadingIndicator(isLoading: Bool){
+        if isLoading {
+            self.showSpinner(onView: self.view)
+        } else {
+            self.removeSpinner()
+        }
+    }
+    
 }

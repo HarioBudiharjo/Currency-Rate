@@ -30,15 +30,21 @@ class HomeViewModel {
     
     
     public func getData(){
-        let url = "\(Resources.String.endPoint.latest)?symbols=\(self.destCurrency.asObserver())&base=\(self.sourceCurrency.asObserver())"
-        print("url : \(url)")
+        loading.onNext(true)
+        let url = try! "\(Resources.String.endPoint.latest)?symbols=\(self.destCurrency.value())&base=\(self.sourceCurrency.value())"
         AF.request(url).response { response in
             let json = try? JSON(data: response.data!)
-            debugPrint(json!)
-            let rate = json!["rates"]["\(self.destCurrency.asObserver())"].stringValue
+            let rate = json!["rates"]["\(try! self.destCurrency.value())"].stringValue
             self.rateCurrency.onNext(rate)
-            print("rate : \(String(describing: rate))")
+            self.loading.onNext(false)
         }
+    }
+    
+    public func clear(){
+        sourceCurrency.onNext(HomeViewModel.Currency.empty)
+        destCurrency.onNext(HomeViewModel.Currency.empty)
+        rateCurrency.onNext("")
+        exchangeCurrency.onNext("")
     }
     
     
