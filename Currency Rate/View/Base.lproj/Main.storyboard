@@ -98,6 +98,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="xvR-ru-2SR"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="clearBarButton" destination="xvR-ru-2SR" id="1Xg-lG-8wh"/>
                         <outlet property="destinationButton" destination="EsW-03-06f" id="J6g-F7-noR"/>
                         <outlet property="destinationRateLabel" destination="sUE-Ee-tDi" id="aMn-AQ-aFz"/>
                         <outlet property="exchangeButton" destination="u81-EB-0pV" id="Hep-kd-eps"/>

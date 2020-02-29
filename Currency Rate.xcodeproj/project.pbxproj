@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		544365A6240AC4C6009F3155 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544365A5240AC4C6009F3155 /* UIViewController.swift */; };
 		54691FEB23E5C7B700650631 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54691FEA23E5C7B700650631 /* AppDelegate.swift */; };
 		54691FED23E5C7B700650631 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54691FEC23E5C7B700650631 /* ViewController.swift */; };
 		54691FF023E5C7B700650631 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54691FEE23E5C7B700650631 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		1F74E8561A7AF09CA14AFC55 /* Pods-Currency RateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Currency RateTests.debug.xcconfig"; path = "Target Support Files/Pods-Currency RateTests/Pods-Currency RateTests.debug.xcconfig"; sourceTree = "<group>"; };
 		32DA123A000C932F4943AF8A /* Pods-Currency Rate-Currency RateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Currency Rate-Currency RateUITests.debug.xcconfig"; path = "Target Support Files/Pods-Currency Rate-Currency RateUITests/Pods-Currency Rate-Currency RateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4909BF1023E9A62E2B9DDA55 /* Pods_Currency_Rate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Currency_Rate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		544365A5240AC4C6009F3155 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		54691FE723E5C7B700650631 /* Currency Rate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Currency Rate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54691FEA23E5C7B700650631 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54691FEC23E5C7B700650631 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		544365A4240AC4B2009F3155 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				544365A5240AC4C6009F3155 /* UIViewController.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		54691FDE23E5C7B700650631 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +144,7 @@
 		54691FE923E5C7B700650631 /* Currency Rate */ = {
 			isa = PBXGroup;
 			children = (
+				544365A4240AC4B2009F3155 /* Extension */,
 				548D3A5123E81C0800EF252C /* Helpers */,
 				54B5788123E614D500A304B0 /* View */,
 				54B5787E23E60B8B00A304B0 /* Controller */,
@@ -457,6 +468,7 @@
 				54691FEB23E5C7B700650631 /* AppDelegate.swift in Sources */,
 				54B5788323E6151A00A304B0 /* Resources.swift in Sources */,
 				54B5788023E6126600A304B0 /* HomeViewModel.swift in Sources */,
+				544365A6240AC4C6009F3155 /* UIViewController.swift in Sources */,
 				54E39F7B23E72D130049A43A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
